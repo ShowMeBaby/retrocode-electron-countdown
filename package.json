@@ -1,0 +1,24 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . 倒计时小工具 --win --out build --arch=x64 --electron-version 9.0.3 --overwrite --ignore=node_modules --ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.0.5"
+  },
+  "dependencies": {}
+}

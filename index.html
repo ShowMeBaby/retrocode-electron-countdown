@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+		<!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+		<title>倒计时小工具</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<div id="app">
+			<div class="key">
+				<div class="iocnBox"><i class="iconfont icon-delete"></i></div>
+				<div class="empty">清空</div>
+				<textarea placeholder="在此述说新年寄语..." rows="1" class="van-field__control"></textarea>
+				<div class="buts">发送</div>
+			</div>
+			<div class="today">
+				<div class="clock">
+					<div class="pos SS" :style="'transform:'+ SSCss"></div>
+					<div class="pos MM" :style="'transform:'+ MMCss"></div>
+					<div class="pos HH" :style="'transform:'+ HHCss"></div>
+					<div class="week" v-html="week">星期六</div>
+					<div class="year" v-html="year">2020</div>
+					<div class="times" v-html="times"><span>17</span>:<span>10</span>:<span>40</span>:<span>25</span></div>
+					<div class="date" v-html="date"><span>06</span>月<span>13</span>日</div>
+					<div class="spot"></div>
+					<ol>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ol>
+				</div>
+				<div class="sydate" v-html="syday"><span>0</span>:<span>00</span>:<span>00</span></div>
+			</div>
+			<div class="buttons">
+				<template v-if="boolCountDown">
+					<div @click="startCountDown" class="message">重置</div>
+				</template>
+				<template v-else>
+					<div @click="startCountDown" class="message">开始</div>
+				</template>
+				<div  @click="stopCountDown" class="message">停止</div>
+				<input class="message" type="number" v-model="countDownInput" placeholder="请输入倒计时时间(分钟)" />
+			</div>
+		</div>
+	</body>
+	<!-- You can also require other files to run in this process -->
+	<script src="./js/common/vue.js"></script>
+	<script src="./js/renderer.js"></script>
+</html>
